@@ -6,7 +6,9 @@ import java.util.Calendar;
 public class Main {
 
 	public static void main(String[] args) {
-
+                
+		// créer la fiche d'un nouveau secrétaire
+		Administratif administratif001 = new Administratif("Armel Cressin", "m", 1990, 1800, "secrétaire");
 		Administratif administratif002 = new Administratif("Louis Dubois", "m", 1950, 2100, "bibliothécaire");
 		Administratif administratif003 = new Administratif("Dubois Marcus", "m", 1980, 2000, "magasinier");
 		Administratif administratif004 = new Administratif("Manuel DaSilva", "m", 1985, 1850, "directeur de CROUS");
@@ -19,9 +21,6 @@ public class Main {
 				"adjointe administrative");
 		Administratif administratif010 = new Administratif("Carmalia Eva", "f", 1989, 2000,
 				"conseillèe d'administration scolaire");
-
-		// créer la fiche d'un nouveau secrétaire
-		Administratif administratif001 = new Administratif("Armel Cressin", "m", 1990, 1800, "secrétaire");
 
 		// instancier les professeurs:
 		Professeur professeurs001 = new Professeur("01", "Chevalier Efi", "m", 1993, 2000, "anglais");
