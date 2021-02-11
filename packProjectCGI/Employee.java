@@ -1,4 +1,4 @@
-package packProjectCGI;
+package packProject;
 
 public class Employee {
 	String nom, sexe;
