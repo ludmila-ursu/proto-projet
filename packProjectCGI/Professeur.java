@@ -1,4 +1,4 @@
-package packProjectCGI;
+package packProject;
 
 public class Professeur extends Employee {
 	String nombre;
