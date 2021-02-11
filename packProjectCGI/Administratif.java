@@ -1,4 +1,4 @@
-package packProjectCGI;
+package packProject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,27 +16,27 @@ public class Administratif extends Employee {
 	// instancier une liste pour y rajouter les professeurs:
 	public static List<Professeur> professeursList = new ArrayList();
 
-	// rajouter un professeur ‡ la liste de professeurs, tout en vÈrifiant si le
-	// professeur existe dÈj‡, ou pas, dans la liste:
+	// rajouter un professeur √† la liste de professeurs, tout en v√©rifiant si le
+	// professeur existe d√©j√†, ou pas, dans la liste:
 	public void ajoutProfesseurs(Professeur prof) {
-		// System.out.println("entrÈe dans la mÈthode" + stg);
+		// System.out.println("entr√©e dans la m√©thode" + stg);
 		if (professeursList.contains(prof)) {
 			System.out.println("Le professeur " + prof.getNom() + "(matricule " + prof.getNombre()
-					+ "), existe dÈj‡ dans la base.");
+					+ "), existe d√©j√† dans la base.");
 		} else {
 			professeursList.add(prof);
 			if (prof.getSexe().equalsIgnoreCase("m")) {
 				System.out.println(prof.getNombre() + ")Le professeur " + prof.getNom()
-						+ " rajoutÈ ‡ la base (matricule " + prof.getNombre() + ").");
+						+ " rajout√© √† la base (matricule " + prof.getNombre() + ").");
 			} else {
 				System.out.println(prof.getNombre() + ")La professeure " + prof.getNom()
-						+ " rajoutÈe ‡ la base (matricule " + prof.getNombre() + ").");
+						+ " rajout√©e √† la base (matricule " + prof.getNombre() + ").");
 			}
 		}
 	}
 
-	// supprimer un professeur ‡ la liste de professeurs, tout en vÈrifiant si
-	// le professeur existe dÈj‡, ou pas, dans la liste:
+	// supprimer un professeur √† la liste de professeurs, tout en v√©rifiant si
+	// le professeur existe d√©j√†, ou pas, dans la liste:
 	public void supprimerProfesseurs(Professeur ProfASupprimer) {
 
 		for (int i = 0; i < professeursList.size(); i++) {
@@ -45,17 +45,17 @@ public class Administratif extends Employee {
 				professeursList.remove(i);
 				if (prof.getSexe().equalsIgnoreCase("m")) {
 					System.out.println(prof.getNombre() + ")Le professeur " + prof.getNom()
-							+ " a ÈtÈ supprimÈ de la base (matricule" + prof.getNombre() + ").");
+							+ " a √©t√© supprim√© de la base (matricule" + prof.getNombre() + ").");
 				} else {
 					System.out.println(prof.getNombre() + ")La professeure " + prof.getNom()
-							+ " a ÈtÈ supprimÈe de la base (matricule" + prof.getNombre() + ").");
+							+ " a √©t√© supprim√©e de la base (matricule" + prof.getNombre() + ").");
 				}
 			}
 
 		}
 	}
 
-	// mÈthode pour rechercher un/e professeur/e en fonction de son matricule:
+	// m√©thode pour rechercher un/e professeur/e en fonction de son matricule:
 	// (exception)
 	public static void rechercheEmployee(String matricule) {
 		System.out.println();
@@ -63,15 +63,15 @@ public class Administratif extends Employee {
 		for (int i = 0; i < professeursList.size(); i++) {
 			Professeur prof = professeursList.get(i);
 			if (matricule.equals(prof.getNombre())) {
-				System.out.println("RÈsultat de la recherche professeur/e : matricule: " + professeursList.get(i).getNombre() + "; Nom, PrÈnom: "
+				System.out.println("R√©sultat de la recherche professeur/e : matricule: " + professeursList.get(i).getNombre() + "; Nom, Pr√©nom: "
 						+ professeursList.get(i).getNom() + "; Sexe: "
-						+ professeursList.get(i).getSexe() + "; AnnÈe Naissance: "
+						+ professeursList.get(i).getSexe() + "; Ann√©e Naissance: "
 						+ professeursList.get(i).getAnneeNaissance() + "; Salaire: "
-						+ professeursList.get(i).getSalaire() + "; Cours EnseignÈ: "
+						+ professeursList.get(i).getSalaire() + "; Cours Enseign√©: "
 						+ professeursList.get(i).getCoursEnseigne());
 			}}}
 			catch(Exception e){
-				System.out.println("RÈsultat de la recherche professeur/e: le professeur avec le matricule" + matricule + "n'existe pas dans la base");
+				System.out.println("R√©sultat de la recherche professeur/e: le professeur avec le matricule" + matricule + "n'existe pas dans la base");
 			}
 		}
 
@@ -79,10 +79,10 @@ public class Administratif extends Employee {
 	switch(civilite)
 	{
 	case "m":
-	System.out.println("RÈsultat de la recherche civilitÈ: Monsieur");
+	System.out.println("R√©sultat de la recherche civilit√©: Monsieur");
 	break;
 	case "f":
-	System.out.println("RÈsultat de la recherche civilitÈ:Madame");
+	System.out.println("R√©sultat de la recherche civilit√©:Madame");
 	break;
 	}
 	}
