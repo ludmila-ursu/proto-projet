@@ -1,15 +1,15 @@
 package packProject;
 
 public class Employee {
-	String name, gender, teachedCourse;
+	String name, gender, function;
 	int salary, birthYear;
 
-	public Employee(String name, String gender, int birthYear, int salary, String teachedCourse) {
+	public Employee(String name, String gender, int birthYear, int salary, String function) {
 		this.name = name;
 		this.gender = gender;
 		this.birthYear = birthYear;
 		this.salary = salary;
-		this.teachedCourse = teachedCourse;
+		this.function = function;
 	}
 
 	public String getName() {
@@ -45,11 +45,11 @@ public class Employee {
 	}
 
 	public String getFunction() {
-		return teachedCourse;
+		return function;
 	}
 
-	public void setFunction(String teachedCourse) {
-		this.teachedCourse = teachedCourse;
+	public void setFunction(String function) {
+		this.function = function;
 	}
 
 	

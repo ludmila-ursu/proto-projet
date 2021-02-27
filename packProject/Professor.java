@@ -19,10 +19,10 @@ public class Professor extends Employee {
 		this.id = id;
 	}
 	public String getTeachedCourse() {
-		return teachedCourse;
+		return function;
 	}
 	public void setTeachedCourse(String teachedCourse) {
-		this.teachedCourse = teachedCourse;
+		this.function = teachedCourse;
 	}
 	
 	
