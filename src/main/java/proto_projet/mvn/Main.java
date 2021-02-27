@@ -1,4 +1,4 @@
-package packProject;
+package proto_projet.mvn;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -65,7 +65,7 @@ public class Main {
 					+ Service.getProfessorList().get(i).getGender() + "; Année Naissance: "
 					+ Service.getProfessorList().get(i).getBirthYear() + "; Salaire: "
 					+ Service.getProfessorList().get(i).getSalary() + "; Cours Enseigné: "
-					+ Service.getProfessorList().get(i).getTeachedCourse());
+					+ Service.getProfessorList().get(i).getFunction());
 		}
 
 		// delete professors from the list:
@@ -84,7 +84,7 @@ public class Main {
 
 		System.out.println();
 		// get array for pyramid of ages:
-		System.out.println("Pyramide des �ges pour les professeurs:");
+		System.out.println("Pyramide des �ges pour les professeurs:");
 		ArrayList<Integer> tabPyramideAges = new ArrayList<Integer>();
 	      LocalDate currentdate = LocalDate.now();
 	      int year = currentdate.getYear();
@@ -107,7 +107,7 @@ public class Main {
 					+ Service.getProfessorList().get(i).getGender() + "; Année Naissance: "
 					+ Service.getProfessorList().get(i).getBirthYear() + "; Salaire: "
 					+ Service.getProfessorList().get(i).getSalary() + "; Cours Enseigné: "
-					+ Service.getProfessorList().get(i).getTeachedCourse());
+					+ Service.getProfessorList().get(i).getFunction());
 
 		}
 

@@ -1,4 +1,4 @@
-package packProject;
+package proto_projet.mvn;
 
 public class Employee {
 	String name, gender, function;
@@ -28,6 +28,14 @@ public class Employee {
 		this.gender = gender;
 	}
 
+	public String getFunction() {
+		return function;
+	}
+
+	public void setFunction(String function) {
+		this.function = function;
+	}
+
 	public int getSalary() {
 		return salary;
 	}
@@ -44,13 +52,6 @@ public class Employee {
 		this.birthYear = birthYear;
 	}
 
-	public String getFunction() {
-		return function;
-	}
-
-	public void setFunction(String function) {
-		this.function = function;
-	}
-
+	
 	
 }

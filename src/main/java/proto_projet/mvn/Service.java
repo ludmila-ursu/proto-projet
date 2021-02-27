@@ -1,4 +1,4 @@
-package packProject;
+package proto_projet.mvn;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -67,13 +67,13 @@ public class Service {
 				}
 			}
 			else {
-				System.out.println("Le numéro de matricule n'existe pas en base");
+				System.out.println("Le numï¿½ro de matricule n'existe pas en base");
 			}
 
 		}
 		}
 		else {
-			System.out.println("Le numéro de matricule ne doit pas être vide");
+			System.out.println("Le numï¿½ro de matricule ne doit pas ï¿½tre vide");
 		}
 	}
 
@@ -90,7 +90,7 @@ public class Service {
 						+ professorList.get(i).getGender() + "; AnnÃ©e Naissance: "
 						+ professorList.get(i).getBirthYear() + "; Salaire: "
 						+ professorList.get(i).getSalary() + "; Cours EnseignÃ©: "
-						+ professorList.get(i).getTeachedCourse());
+						+ professorList.get(i).getFunction());
 			}}}
 			catch(Exception e){
 				System.out.println("RÃ©sultat de la recherche professeur/e: le professeur avec le matricule" + matricule + "n'existe pas dans la base");

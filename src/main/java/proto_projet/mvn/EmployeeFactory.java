@@ -1,4 +1,4 @@
-package packProject;
+package proto_projet.mvn;
 
 public class EmployeeFactory implements AbstractFactory<Employee> {
 
