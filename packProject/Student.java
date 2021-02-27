@@ -1,6 +1,6 @@
 package packProject;
 
-public class Etudiant {
+public class Student {
 
 	}
 	

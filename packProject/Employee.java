@@ -1,46 +1,56 @@
 package packProject;
 
 public class Employee {
-	String nom, sexe;
-	int salaire, anneeNaissance;
+	String name, gender, teachedCourse;
+	int salary, birthYear;
 
-	public Employee(String nom, String sexe, int anneeNaissance, int salaire) {
-		this.nom = nom;
-		this.sexe = sexe;
-		this.anneeNaissance = anneeNaissance;
-		this.salaire = salaire;
+	public Employee(String name, String gender, int birthYear, int salary, String teachedCourse) {
+		this.name = name;
+		this.gender = gender;
+		this.birthYear = birthYear;
+		this.salary = salary;
+		this.teachedCourse = teachedCourse;
 	}
 
-	public String getNom() {
-		return nom;
+	public String getName() {
+		return name;
 	}
 
-	public void setNom(String nom) {
-		this.nom = nom;
+	public void setName(String name) {
+		this.name = name;
 	}
 
-	public String getSexe() {
-		return sexe;
+	public String getGender() {
+		return gender;
 	}
 
-	public void setSexe(String sexe) {
-		this.sexe = sexe;
+	public void setGender(String gender) {
+		this.gender = gender;
 	}
 
-	public int getSalaire() {
-		return salaire;
+	public int getSalary() {
+		return salary;
 	}
 
-	public void setSalaire(int salaire) {
-		this.salaire = salaire;
+	public void setSalary(int salary) {
+		this.salary = salary;
 	}
 
-	public int getAnneeNaissance() {
-		return anneeNaissance;
+	public int getBirthYear() {
+		return birthYear;
 	}
 
-	public void setAnneeNaissance(int anneeNaissance) {
-		this.anneeNaissance = anneeNaissance;
+	public void setBirthYear(int birthYear) {
+		this.birthYear = birthYear;
 	}
 
+	public String getFunction() {
+		return teachedCourse;
+	}
+
+	public void setFunction(String teachedCourse) {
+		this.teachedCourse = teachedCourse;
+	}
+
+	
 }

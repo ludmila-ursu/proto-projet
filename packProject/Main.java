@@ -1,122 +1,118 @@
 package packProject;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
+
 
 public class Main {
 
 	public static void main(String[] args) {
-                
-		// créer la fiche d'un nouveau secrétaire
-		Administratif administratif001 = new Administratif("Armel Cressin", "m", 1990, 1800, "secrétaire");
-		Administratif administratif002 = new Administratif("Louis Dubois", "m", 1950, 2100, "bibliothécaire");
-		Administratif administratif003 = new Administratif("Dubois Marcus", "m", 1980, 2000, "magasinier");
-		Administratif administratif004 = new Administratif("Manuel DaSilva", "m", 1985, 1850, "directeur de CROUS");
-		Administratif administratif005 = new Administratif("Alex Nuage", "m", 1990, 2130, "comptable");
-		Administratif administratif006 = new Administratif("Claire Annabelle", "f", 1975, 1850,
-				"chef d'établissement");
-		Administratif administratif007 = new Administratif("Postima Ecouata", "f", 1962, 1900, "secrétaire");
-		Administratif administratif008 = new Administratif("Kosmos Ghita", "f", 1990, 1900, "conservatrice");
-		Administratif administratif009 = new Administratif("Besonieux Eric", "f", 1992, 1950,
-				"adjointe administrative");
-		Administratif administratif010 = new Administratif("Carmalia Eva", "f", 1989, 2000,
-				"conseillèe d'administration scolaire");
 
-		// instancier les professeurs:
-		Professeur professeurs001 = new Professeur("01", "Chevalier Efi", "m", 1993, 2000, "anglais");
-		Professeur professeurs002 = new Professeur("02", "Bouton Antoine", "m", 1985, 2000,
+		Service service = new Service();
+		EmployeeFactory factory = new EmployeeFactory();
+		// create administrators
+
+		factory.create("administrator", "Armel Cressin", "m", 1990, 1800, "secrétaire");
+		factory.create("administrator", "Louis Dubois", "m", 1950, 2100, "bibliothécaire");
+		factory.create("administrator", "Dubois Marcus", "m", 1980, 2000, "magasinier");
+		factory.create("administrator", "Manuel DaSilva", "m", 1985, 1850, "directeur de CROUS");
+		factory.create("administrator", "Alex Nuage", "m", 1990, 2130, "comptable");
+		factory.create("administrator", "Claire Annabelle", "f", 1975, 1850, "chef d'établissement");
+		factory.create("administrator", "Postima Ecouata", "f", 1962, 1900, "secrétaire");
+		factory.create("administrator", "Kosmos Ghita", "f", 1990, 1900, "conservatrice");
+		factory.create("administrator", "Besonieux Eric", "f", 1992, 1950, "adjointe administrative");
+		factory.create("administrator", "Carmalia Eva", "f", 1989, 2000, "conseillèe d'administration scolaire");
+
+		// create professors:
+		Professor professeurs001 = (Professor) factory.create("professor", "Chevalier Efi", "m", 1993, 2000, "anglais");
+		Professor professeurs002 = (Professor) factory.create("professor", "Bouton Antoine", "m", 1985, 2000,
 				"alorithmique et programmation");
-		Professeur professeurs003 = new Professeur("03", "Zeta Emilie", "f", 1963, 2000,
+		Professor professeurs003 = (Professor) factory.create("professor", "Zeta Emilie", "f", 1963, 2000,
 				"atelier de l'informaticien");
-		Professeur professeurs004 = new Professeur("04", "Kiwi Jean", "m", 1986, 2000, "programmation fonctionnelle");
-		Professeur professeurs005 = new Professeur("05", "Martin Tresse", "m", 1973, 2000, "réseaux");
-		Professeur professeurs006 = new Professeur("06", "Poineaut Isabelle", "f", 1984, 2000, "logique");
-		Professeur professeurs007 = new Professeur("07", "Duviviez Hélène", "f", 1996, 2000,
+		Professor professeurs004 = (Professor) factory.create("professor", "Kiwi Jean", "m", 1986, 2000,
+				"programmation fonctionnelle");
+		Professor professeurs005 = (Professor) factory.create("professor", "Martin Tresse", "m", 1973, 2000,
+				"réseaux");
+		Professor professeurs006 = (Professor) factory.create("professor", "Poineaut Isabelle", "f", 1984, 2000,
+				"logique");
+		Professor professeurs007 = (Professor) factory.create("professor", "Duviviez Hélène", "f", 1996, 2000,
 				"analyse numérique matricielle");
-		Professeur professeurs008 = new Professeur("08", "Besanote Florence", "f", 1986, 2000, "statistiques");
-		Professeur professeurs009 = new Professeur("09", "Blois Thierry", "f", 1987, 2000, "algèbre");
-		Professeur professeurs010 = new Professeur("10", "Patrice Philippe", "m", 1975, 2000, "modélisation");
+		Professor professeurs008 = (Professor) factory.create("professor", "Besanote Florence", "f", 1986, 2000,
+				"statistiques");
+		Professor professeurs009 = (Professor) factory.create("professor", "Blois Thierry", "f", 1987, 2000,
+				"algèbre");
+		Professor professeurs010 = (Professor) factory.create("professor", "Patrice Philippe", "m", 1975, 2000,
+				"modélisation");
 
-		// demander au secrétare de rajouter les professeurs à la liste:
-		administratif001.ajoutProfesseurs(professeurs001);
-		administratif001.ajoutProfesseurs(professeurs002);
-		administratif001.ajoutProfesseurs(professeurs003);
-		administratif001.ajoutProfesseurs(professeurs004);
-		administratif001.ajoutProfesseurs(professeurs005);
-		administratif001.ajoutProfesseurs(professeurs006);
-		administratif001.ajoutProfesseurs(professeurs007);
-		administratif001.ajoutProfesseurs(professeurs008);
-		administratif001.ajoutProfesseurs(professeurs009);
-		administratif001.ajoutProfesseurs(professeurs010);
-		administratif001.ajoutProfesseurs(professeurs010);
+		// add professors to a list:
+		service.addProfessor(professeurs001);
+		service.addProfessor(professeurs002);
+		service.addProfessor(professeurs003);
+		service.addProfessor(professeurs004);
+		service.addProfessor(professeurs005);
+		service.addProfessor(professeurs006);
+		service.addProfessor(professeurs007);
+		service.addProfessor(professeurs008);
+		service.addProfessor(professeurs009);
+		service.addProfessor(professeurs010);
 
-		// demander au secrétaire de faire affichier la liste des professeurs:
+		// show professors:
 		System.out.println();
 		System.out.println("Les professeurs présents en base après  rajouts: ");
-		for (int i = 0; i < Administratif.professeursList.size(); i++) {
-			System.out.println("matricule: " + Administratif.professeursList.get(i).getNombre() + "; Nom, Prénom: "
-					+ Administratif.professeursList.get(i).getNom() + "; Sexe: "
-					+ Administratif.professeursList.get(i).getSexe() + "; Année Naissance: "
-					+ Administratif.professeursList.get(i).getAnneeNaissance() + "; Salaire: "
-					+ Administratif.professeursList.get(i).getSalaire() + "; Cours Enseigné: "
-					+ Administratif.professeursList.get(i).getCoursEnseigne());
+		for (int i = 0; i < Service.getProfessorList().size(); i++) {
+			System.out.println("matricule: " + Service.getProfessorList().get(i).getId() + "; Nom, Prénom: "
+					+ Service.getProfessorList().get(i).getName() + "; Sexe: "
+					+ Service.getProfessorList().get(i).getGender() + "; Année Naissance: "
+					+ Service.getProfessorList().get(i).getBirthYear() + "; Salaire: "
+					+ Service.getProfessorList().get(i).getSalary() + "; Cours Enseigné: "
+					+ Service.getProfessorList().get(i).getTeachedCourse());
 		}
 
-		// demander au secrétaire de supprimer les professeurs de la liste:
+		// delete professors from the list:
 		System.out.println();
 
-//		administratif001.supprimerProfesseurs(professeurs001);
-//		administratif001.supprimerProfesseurs(professeurs002);
-//		administratif001.supprimerProfesseurs(professeurs003);
-//		administratif001.supprimerProfesseurs(professeurs004);
-//		administratif001.supprimerProfesseurs(professeurs005);
-//		administratif001.supprimerProfesseurs(professeurs006);
-//		administratif001.supprimerProfesseurs(professeurs007);
-//		administratif001.supprimerProfesseurs(professeurs008);
-//		administratif001.supprimerProfesseurs(professeurs009);
-//		administratif001.supprimerProfesseurs(professeurs010);
+		service.deleteProfessor(professeurs001);
+		service.deleteProfessor(002L);
+//		service.deleteProfessor(professeurs003);
+//		service.deleteProfessor(professeurs004);
+//		service.deleteProfessor(professeurs005);
+//		service.deleteProfessor(professeurs006);
+//		service.deleteProfessor(professeurs007);
+//		service.deleteProfessor(professeurs008);
+//		service.deleteProfessor(professeurs009);
+//		service.deleteProfessor(professeurs010);
 
 		System.out.println();
-		//instancier un tableau pour avoir une pyramide des âges:
-		ArrayList<Integer> tabPyramideAges= new ArrayList<Integer>();
-		for (int i=0; i<Administratif.professeursList.size(); i++){
-		tabPyramideAges.add(i, (Integer) 2019-Administratif.professeursList.get(i).getAnneeNaissance());
+		// get array for pyramid of ages:
+		System.out.println("Pyramide des �ges pour les professeurs:");
+		ArrayList<Integer> tabPyramideAges = new ArrayList<Integer>();
+	      LocalDate currentdate = LocalDate.now();
+	      int year = currentdate.getYear();
+		
+		
+		for (int i = 0; i < Service.getProfessorList().size(); i++) {
+			tabPyramideAges.add(i, year - Service.getProfessorList().get(i).getBirthYear());
 		}
-
-
-		System.out.println(tabPyramideAges.size() + " hello tab");
-		System.out.println(tabPyramideAges.get(0));
-		System.out.println(tabPyramideAges.get(1));
-		System.out.println(tabPyramideAges.get(2));
-		System.out.println(tabPyramideAges.get(3));
-		System.out.println(tabPyramideAges.get(4));
-		System.out.println(tabPyramideAges.get(5));
-		System.out.println(tabPyramideAges.get(6));
-		System.out.println(tabPyramideAges.get(7));
-		System.out.println(tabPyramideAges.get(8));
-		System.out.println(tabPyramideAges.get(9));
-
+		
+		for (int age : tabPyramideAges) {
+			System.out.println(age);
+		};
 
 		// demander au secrétaire de faire affichier la liste des professeurs:
 		System.out.println();
 		System.out.println("Les professeurs restants après suppressions: ");
-		for (int i = 0; i < Administratif.professeursList.size(); i++) {
-			System.out.println("matricule: " + Administratif.professeursList.get(i).getNombre() + "; Nom, Prénom: "
-					+ Administratif.professeursList.get(i).getNom() + "; Sexe: "
-					+ Administratif.professeursList.get(i).getSexe() + "; Année Naissance: "
-					+ Administratif.professeursList.get(i).getAnneeNaissance() + "; Salaire: "
-					+ Administratif.professeursList.get(i).getSalaire() + "; Cours Enseigné: "
-					+ Administratif.professeursList.get(i).getCoursEnseigne());
-		
+		for (int i = 0; i < Service.getProfessorList().size(); i++) {
+			System.out.println("matricule: " + Service.getProfessorList().get(i).getId() + "; Nom, Prénom: "
+					+ Service.getProfessorList().get(i).getName() + "; Sexe: "
+					+ Service.getProfessorList().get(i).getGender() + "; Année Naissance: "
+					+ Service.getProfessorList().get(i).getBirthYear() + "; Salaire: "
+					+ Service.getProfessorList().get(i).getSalary() + "; Cours Enseigné: "
+					+ Service.getProfessorList().get(i).getTeachedCourse());
 
 		}
-		
-		// rechercher un/e employé/e en fonction de son matricule:
-		administratif001.rechercheEmployee("01");
-		
-		//rajouter la civilité des professeurs:
-		administratif001.civiliteProfesseur(Administratif.professeursList.get(9).getSexe());
 
+		// rechercher un/e employé/e en fonction de son matricule:
+		Service.getEmployee(01L);
 
 	}
 }
