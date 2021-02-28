@@ -35,7 +35,7 @@ public class Service {
 	public void deleteProfessor(Professor ProfToDelete) {
 
 		for (int i = 0; i < professorList.size(); i++) {
-			Professor prof = (Professor) professorList.get(i);
+			Professor prof = professorList.get(i);
 			if (prof.equals(ProfToDelete)) {
 				professorList.remove(i);
 				if (prof.getGender().equalsIgnoreCase("m")) {

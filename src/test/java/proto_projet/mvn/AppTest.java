@@ -1,9 +1,9 @@
 package proto_projet.mvn;
 
-import junit.framework.Test;
+
 import junit.framework.TestSuite;
 
-import static org.junit.Assert.assertTrue;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Unit test for simple App.
@@ -24,7 +24,7 @@ public class AppTest
     /**
      * @return the suite of tests being tested
      */
-    public static Test suite()
+    public static TestSuite suite()
     {
         return new TestSuite( AppTest.class );
     }
