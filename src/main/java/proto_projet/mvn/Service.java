@@ -1,5 +1,6 @@
 package proto_projet.mvn;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,6 +109,21 @@ public class Service {
 	break;
 	}
 	}
-	
+
+	//get pyramid of ages for all professors:
+	public static void getPyramidOfAges() {
+		ArrayList<Integer> tabPyramideAges = new ArrayList<Integer>();
+		LocalDate currentdate = LocalDate.now();
+		int year = currentdate.getYear();
+
+
+		for (int i = 0; i < Service.getProfessorList().size(); i++) {
+			tabPyramideAges.add(i, year - Service.getProfessorList().get(i).getBirthYear());
+		}
+
+		for (int age : tabPyramideAges) {
+			System.out.println(age);
+		}
+	}
 	
 }

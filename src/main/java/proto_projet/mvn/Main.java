@@ -2,12 +2,12 @@ package proto_projet.mvn;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 @SpringBootApplication
+//@EnableAutoConfiguration(exclude = {DataSourceAutoConfiguration.class})
 public class Main {
 
 
@@ -15,8 +15,9 @@ public class Main {
 
 		ConfigurableApplicationContext contextAppl = SpringApplication.run(Main.class, args);
 
-		Service service = new Service();
-		EmployeeFactory factory = new EmployeeFactory();
+		ApplicationContext beanFactory = new ClassPathXmlApplicationContext("src/resources/spring.xml");
+		Service service = (Service) beanFactory.getBean("service");
+		EmployeeFactory factory = (EmployeeFactory) beanFactory.getBean("employeeFactory");
 		// create administrators
 
 		factory.create("administrator", "Armel Cressin", "m", 1990, 1800, "secrétaire");
@@ -92,18 +93,7 @@ public class Main {
 		System.out.println();
 		// get array for pyramid of ages:
 		System.out.println("Pyramide des âges pour les professeurs:");
-		ArrayList<Integer> tabPyramideAges = new ArrayList<Integer>();
-	      LocalDate currentdate = LocalDate.now();
-	      int year = currentdate.getYear();
-		
-		
-		for (int i = 0; i < Service.getProfessorList().size(); i++) {
-			tabPyramideAges.add(i, year - Service.getProfessorList().get(i).getBirthYear());
-		}
-		
-		for (int age : tabPyramideAges) {
-			System.out.println(age);
-		}
+		service.getPyramidOfAges();
 
 		// demander au secrétaire de faire affichier la liste des professeurs:
 		System.out.println();
@@ -122,4 +112,6 @@ public class Main {
 		Service.getEmployee(01L);
 
 	}
+
+
 }

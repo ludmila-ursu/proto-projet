@@ -5,8 +5,13 @@ import lombok.Setter;
 
 @Getter @Setter
 public class Employee {
-	String name, gender, function;
-	int salary, birthYear;
+	private static int counter = 0;
+	private String name, gender, function;
+	private int salary, birthYear, nb;
+	{
+		nb = counter++;
+	}
+
 
 	public Employee(String name, String gender, int birthYear, int salary, String function) {
 		this.name = name;
@@ -14,6 +19,8 @@ public class Employee {
 		this.birthYear = birthYear;
 		this.salary = salary;
 		this.function = function;
+		System.out.println(nb + " - in employee constructor");
+
 	}
 
 
