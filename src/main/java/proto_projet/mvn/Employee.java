@@ -1,5 +1,9 @@
 package proto_projet.mvn;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public class Employee {
 	String name, gender, function;
 	int salary, birthYear;
@@ -12,46 +16,5 @@ public class Employee {
 		this.function = function;
 	}
 
-	public String getName() {
-		return name;
-	}
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getGender() {
-		return gender;
-	}
-
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-
-	public String getFunction() {
-		return function;
-	}
-
-	public void setFunction(String function) {
-		this.function = function;
-	}
-
-	public int getSalary() {
-		return salary;
-	}
-
-	public void setSalary(int salary) {
-		this.salary = salary;
-	}
-
-	public int getBirthYear() {
-		return birthYear;
-	}
-
-	public void setBirthYear(int birthYear) {
-		this.birthYear = birthYear;
-	}
-
-	
-	
 }

@@ -84,7 +84,7 @@ public class Main {
 
 		System.out.println();
 		// get array for pyramid of ages:
-		System.out.println("Pyramide des �ges pour les professeurs:");
+		System.out.println("Pyramide des âges pour les professeurs:");
 		ArrayList<Integer> tabPyramideAges = new ArrayList<Integer>();
 	      LocalDate currentdate = LocalDate.now();
 	      int year = currentdate.getYear();

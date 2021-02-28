@@ -1,5 +1,9 @@
 package proto_projet.mvn;
 
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter @Setter
 public class Professor extends Employee {
 	public static Long employeeCounter =0L;
 	private Long id;
@@ -12,23 +16,6 @@ public class Professor extends Employee {
 		super(name, gender, birthYear, salary, teachedCourse);
 	}
 
-	public static Long getEmployeeCounter() {
-		return employeeCounter;
-	}
-
-	public static void setEmployeeCounter(Long employeeCounter) {
-		Professor.employeeCounter = employeeCounter;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-	
-	
 	
 }
 
