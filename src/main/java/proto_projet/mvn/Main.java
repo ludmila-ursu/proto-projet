@@ -13,7 +13,7 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		ConfigurableApplicationContext context = SpringApplication.run(Main.class, args);
+		ConfigurableApplicationContext contextAppl = SpringApplication.run(Main.class, args);
 
 		Service service = new Service();
 		EmployeeFactory factory = new EmployeeFactory();
