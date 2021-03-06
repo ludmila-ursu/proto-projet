@@ -4,6 +4,8 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
     <bean id="service" class="proto_projet.mvn.Service"> </bean>
-    <bean id = "employeeFactory" class = "proto_projet.mvn.EmployeeFactory"></bean>
+
+    <bean id="employee" class="proto_projet.mvn.Employee"></bean>
+    <bean id = "professor" class = "proto_projet.mvn.Professor"></bean>
 
 </beans>

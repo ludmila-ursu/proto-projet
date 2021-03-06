@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Service {
+	private boolean deleted = false;
 
 	public static List<Professor> professorList = new ArrayList<>();
 	public static List<Professor> getProfessorList() {
@@ -18,17 +19,12 @@ public class Service {
 	// add professor(s)
 	public void addProfessor(Professor prof) {
 		if (professorList.contains(prof)) {
-			System.out.println("Le professeur " + prof.getName() + "(matricule " + prof.getId()
+			System.out.println(genderProfessor(prof.getGender()) + " professeur" + verbAgreement(prof.getGender()) + " " + prof.getName() + "(matricule " + prof.getId()
 					+ "), existe déjà dans la base.");
 		} else {
 			professorList.add(prof);
-			if (prof.getGender().equalsIgnoreCase("m")) {
-				System.out.println(prof.getId() + ")Le professeur " + prof.getName()
-						+ " rajouté à la base (matricule " + prof.getId() + ").");
-			} else {
-				System.out.println(prof.getId() + ")La professeure " + prof.getName()
-						+ " rajoutée à la base (matricule " + prof.getId() + ").");
-			}
+			System.out.println(prof.getId() + ")" + genderProfessor(prof.getGender()) + " professeur" + verbAgreement(prof.getGender()) + " " + prof.getName()
+					+ " a été rajouté" + verbAgreement(prof.getGender()) + " à la base (matricule " + prof.getId() + ").");
 		}
 	}
 
@@ -37,40 +33,37 @@ public class Service {
 
 		for (int i = 0; i < professorList.size(); i++) {
 			Professor prof = professorList.get(i);
+			deleted = false;
 			if (prof.equals(ProfToDelete)) {
 				professorList.remove(i);
-				if (prof.getGender().equalsIgnoreCase("m")) {
-					System.out.println(prof.getId() + ")Le professeur " + prof.getName()
-							+ " a été supprimé de la base (matricule" + prof.getId() + ").");
-				} else {
-					System.out.println(prof.getId() + ")La professeure " + prof.getName()
-							+ " a été supprimée de la base (matricule" + prof.getId() + ").");
-				}
+				System.out.println(prof.getId() + ")" + genderProfessor(prof.getGender()) + " professeur" + verbAgreement(prof.getGender()) + " " + prof.getName()
+							+ " a été supprimé" + verbAgreement(prof.getGender()) + " de la base (matricule" + prof.getId() + ").");
+					deleted = true;
+					break;
 			}
 
+		}
+		if (!deleted){
+			System.out.println("Le/La professeur/e n'existe pas en base");
+			deleted = false;
 		}
 	}
 	
 	// delete professor (by registration number):
 	public void deleteProfessor(Long matricule) {
 		if(matricule != null) {
-		for (Professor prof: professorList) {
+			deleted = false;
+			for (Professor prof: professorList) {
 			if (prof.getId().equals(matricule)) {
-				if (prof.getGender().equalsIgnoreCase("m")) {
-					System.out.println(prof.getId() + ")Le professeur " + prof.getName()
-							+ " a été supprimé de la base (matricule" + prof.getId() + ").");
+				System.out.println(prof.getId() + ")" + genderProfessor(prof.getGender()) + " professeur"  + verbAgreement(prof.getGender()) + " "+ prof.getName()
+							+ " a été supprimé" + verbAgreement(prof.getGender()) + " de la base (matricule" + prof.getId() + ").");
 					professorList.remove(prof);
 					break;
-				} else {
-					System.out.println(prof.getId() + ")La professeure " + prof.getName()
-							+ " a été supprimée de la base (matricule" + prof.getId() + ").");
-					professorList.remove(prof);
-				}
 			}
-			else {
-				System.out.println("Le num�ro de matricule n'existe pas en base");
-			}
-
+		}
+		if (!deleted){
+				System.out.println("Le num�ro de matricule " + matricule + " n'existe pas en base");
+				deleted = false;
 		}
 		}
 		else {
@@ -94,21 +87,9 @@ public class Service {
 						+ professorList.get(i).getFunction());
 			}}}
 			catch(Exception e){
-				System.out.println("Résultat de la recherche professeur/e: le professeur avec le matricule" + matricule + "n'existe pas dans la base");
+				System.out.println("Résultat de la recherche: aucun enregistrement pour le matricule" + matricule + "n'existe pas en base de données");
 			}
 		}
-
-	public static void genderProfessor(String gender){
-	switch(gender)
-	{
-	case "m":
-	System.out.println("Résultat de la recherche civilité: Monsieur");
-	break;
-	case "f":
-	System.out.println("Résultat de la recherche civilité:Madame");
-	break;
-	}
-	}
 
 	//get pyramid of ages for all professors:
 	public static void getPyramidOfAges() {
@@ -125,5 +106,42 @@ public class Service {
 			System.out.println(age);
 		}
 	}
-	
+
+	public static void showList() {
+		for (int i = 0; i < Service.getProfessorList().size(); i++) {
+			System.out.println("matricule: " + Service.getProfessorList().get(i).getId() + "; Nom, Prénom: "
+					+ Service.getProfessorList().get(i).getName() + "; Sexe: "
+					+ Service.getProfessorList().get(i).getGender() + "; Année Naissance: "
+					+ Service.getProfessorList().get(i).getBirthYear() + "; Salaire: "
+					+ Service.getProfessorList().get(i).getSalary() + "; Cours Enseigné: "
+					+ Service.getProfessorList().get(i).getFunction());
+
+		}
+	}
+
+	private static String genderProfessor(String gender) {
+		String gend = null;
+		String verbAgreem = null;
+		switch (gender) {
+			case "m":
+				gend = "Le";
+			break;
+			case "f":
+				gend="La";
+				verbAgreem = "e";
+			break;
+			default:
+				gend = "Le/La";
+		}
+		return gend;
+	}
+
+	private static String verbAgreement(String gender) {
+		if(gender == "f") {
+			return "e";
+		}
+		else{
+			return "";
+		}
+	}
 }

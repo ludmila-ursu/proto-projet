@@ -8,7 +8,6 @@ public class Administrator extends Employee {
 	}
 	public Administrator(String name, String gender, int birthYear, int salary, String function) {
 		super(name, gender, birthYear, salary, function);
-		System.out.println(nbAdmin + " - in administrator constructor");
 
 	}
 }
